@@ -9,11 +9,20 @@
         "documentation": {}
     },
     {
+        "label": "client_socket",
+        "kind": 5,
+        "importPath": "tcp_client",
+        "description": "tcp_client",
+        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((socket.gethostbyname(socket.gethostname()), 12345))\n# before decoding",
+        "detail": "tcp_client",
+        "documentation": {}
+    },
+    {
         "label": "server_socket",
         "kind": 5,
         "importPath": "tcp_server",
         "description": "tcp_server",
-        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# ^ Get IP\nprint(socket.gethostname())\nprint(socket.gethostbyname(socket.gethostname()))\nserver_socket.bind((socket.gethostbyname(socket.gethostname()), 12345))\nserver_socket.listen()",
+        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# ^ Get IP\nprint(socket.gethostname())\nprint(socket.gethostbyname(socket.gethostname()))\nserver_socket.bind((socket.gethostbyname(socket.gethostname()), 12345))\nserver_socket.listen()\nwhile True:\n    client_socket, client_address = server_socket.accept()\n    print(type(client_socket))\n    print(client_socket)",
         "detail": "tcp_server",
         "documentation": {}
     }

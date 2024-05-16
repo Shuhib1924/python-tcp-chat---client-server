@@ -10,3 +10,13 @@ print(socket.gethostbyname(socket.gethostname()))
 server_socket.bind((socket.gethostbyname(socket.gethostname()), 12345))
 
 server_socket.listen()
+
+while True:
+    client_socket, client_address = server_socket.accept()
+    print(type(client_socket))
+    print(client_socket)
+    print(type(client_address))
+    print(client_address)
+
+    server_socket.close()
+    break
