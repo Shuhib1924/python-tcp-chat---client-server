@@ -13,7 +13,7 @@
         "kind": 5,
         "importPath": "chat_client",
         "description": "chat_client",
-        "peekOfCode": "DEST_IP = socket.gethostbyname(socket.gethostname())\nDEST_PORT = 12345\nENCODER = 'utf-8'\nBYTESIZE = 1024\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((DEST_IP, DEST_PORT))",
+        "peekOfCode": "DEST_IP = socket.gethostbyname(socket.gethostname())\nDEST_PORT = 12345\nENCODER = 'utf-8'\nBYTESIZE = 1024\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((DEST_IP, DEST_PORT))\nwhile True:\n    message = client_socket.recv(BYTESIZE).decode(ENCODER)\n    # print(message)\n    if message == 'quit':",
         "detail": "chat_client",
         "documentation": {}
     },
@@ -22,7 +22,7 @@
         "kind": 5,
         "importPath": "chat_client",
         "description": "chat_client",
-        "peekOfCode": "DEST_PORT = 12345\nENCODER = 'utf-8'\nBYTESIZE = 1024\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((DEST_IP, DEST_PORT))",
+        "peekOfCode": "DEST_PORT = 12345\nENCODER = 'utf-8'\nBYTESIZE = 1024\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((DEST_IP, DEST_PORT))\nwhile True:\n    message = client_socket.recv(BYTESIZE).decode(ENCODER)\n    # print(message)\n    if message == 'quit':\n        client_socket.send('quit'.encode(ENCODER))",
         "detail": "chat_client",
         "documentation": {}
     },
@@ -31,7 +31,7 @@
         "kind": 5,
         "importPath": "chat_client",
         "description": "chat_client",
-        "peekOfCode": "ENCODER = 'utf-8'\nBYTESIZE = 1024\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((DEST_IP, DEST_PORT))",
+        "peekOfCode": "ENCODER = 'utf-8'\nBYTESIZE = 1024\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((DEST_IP, DEST_PORT))\nwhile True:\n    message = client_socket.recv(BYTESIZE).decode(ENCODER)\n    # print(message)\n    if message == 'quit':\n        client_socket.send('quit'.encode(ENCODER))\n        print('\\nEnding the chat')",
         "detail": "chat_client",
         "documentation": {}
     },
@@ -40,7 +40,7 @@
         "kind": 5,
         "importPath": "chat_client",
         "description": "chat_client",
-        "peekOfCode": "BYTESIZE = 1024\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((DEST_IP, DEST_PORT))",
+        "peekOfCode": "BYTESIZE = 1024\nclient_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((DEST_IP, DEST_PORT))\nwhile True:\n    message = client_socket.recv(BYTESIZE).decode(ENCODER)\n    # print(message)\n    if message == 'quit':\n        client_socket.send('quit'.encode(ENCODER))\n        print('\\nEnding the chat')\n        break",
         "detail": "chat_client",
         "documentation": {}
     },
@@ -49,7 +49,7 @@
         "kind": 5,
         "importPath": "chat_client",
         "description": "chat_client",
-        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((DEST_IP, DEST_PORT))",
+        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((DEST_IP, DEST_PORT))\nwhile True:\n    message = client_socket.recv(BYTESIZE).decode(ENCODER)\n    # print(message)\n    if message == 'quit':\n        client_socket.send('quit'.encode(ENCODER))\n        print('\\nEnding the chat')\n        break\n    else:",
         "detail": "chat_client",
         "documentation": {}
     },
@@ -67,7 +67,7 @@
         "kind": 5,
         "importPath": "chat_server",
         "description": "chat_server",
-        "peekOfCode": "HOST_PORT = 12345\nENCODER = \"utf-8\"\nBYTESIZE = 1024\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((HOST_IP, HOST_PORT))\nserver_socket.listen()\nprint('Server is running...\\n')\nclient_socket, client_address = server_socket.accept()\nclient_socket.send('you are connected to the server...\\n'.encode(ENCODER))",
+        "peekOfCode": "HOST_PORT = 12345\nENCODER = \"utf-8\"\nBYTESIZE = 1024\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((HOST_IP, HOST_PORT))\nserver_socket.listen()\nprint('Server is running...\\n')\nclient_socket, client_address = server_socket.accept()\nclient_socket.send('you are connected to the server...\\n'.encode(ENCODER))\nwhile True:",
         "detail": "chat_server",
         "documentation": {}
     },
@@ -76,7 +76,7 @@
         "kind": 5,
         "importPath": "chat_server",
         "description": "chat_server",
-        "peekOfCode": "ENCODER = \"utf-8\"\nBYTESIZE = 1024\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((HOST_IP, HOST_PORT))\nserver_socket.listen()\nprint('Server is running...\\n')\nclient_socket, client_address = server_socket.accept()\nclient_socket.send('you are connected to the server...\\n'.encode(ENCODER))",
+        "peekOfCode": "ENCODER = \"utf-8\"\nBYTESIZE = 1024\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((HOST_IP, HOST_PORT))\nserver_socket.listen()\nprint('Server is running...\\n')\nclient_socket, client_address = server_socket.accept()\nclient_socket.send('you are connected to the server...\\n'.encode(ENCODER))\nwhile True:\n    message = client_socket.recv(BYTESIZE).decode(ENCODER)",
         "detail": "chat_server",
         "documentation": {}
     },
@@ -85,7 +85,7 @@
         "kind": 5,
         "importPath": "chat_server",
         "description": "chat_server",
-        "peekOfCode": "BYTESIZE = 1024\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((HOST_IP, HOST_PORT))\nserver_socket.listen()\nprint('Server is running...\\n')\nclient_socket, client_address = server_socket.accept()\nclient_socket.send('you are connected to the server...\\n'.encode(ENCODER))",
+        "peekOfCode": "BYTESIZE = 1024\nserver_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((HOST_IP, HOST_PORT))\nserver_socket.listen()\nprint('Server is running...\\n')\nclient_socket, client_address = server_socket.accept()\nclient_socket.send('you are connected to the server...\\n'.encode(ENCODER))\nwhile True:\n    message = client_socket.recv(BYTESIZE).decode(ENCODER)\n    # print(message)",
         "detail": "chat_server",
         "documentation": {}
     },
@@ -94,7 +94,7 @@
         "kind": 5,
         "importPath": "chat_server",
         "description": "chat_server",
-        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((HOST_IP, HOST_PORT))\nserver_socket.listen()\nprint('Server is running...\\n')\nclient_socket, client_address = server_socket.accept()\nclient_socket.send('you are connected to the server...\\n'.encode(ENCODER))",
+        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver_socket.bind((HOST_IP, HOST_PORT))\nserver_socket.listen()\nprint('Server is running...\\n')\nclient_socket, client_address = server_socket.accept()\nclient_socket.send('you are connected to the server...\\n'.encode(ENCODER))\nwhile True:\n    message = client_socket.recv(BYTESIZE).decode(ENCODER)\n    # print(message)\n    if message == 'quit':",
         "detail": "chat_server",
         "documentation": {}
     },
