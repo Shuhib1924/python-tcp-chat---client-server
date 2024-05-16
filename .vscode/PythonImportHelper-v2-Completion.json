@@ -1,0 +1,20 @@
+[
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "server_socket",
+        "kind": 5,
+        "importPath": "tcp_server",
+        "description": "tcp_server",
+        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# ^ Get IP\nprint(socket.gethostname())\nprint(socket.gethostbyname(socket.gethostname()))\nserver_socket.bind((socket.gethostbyname(socket.gethostname()), 12345))\nserver_socket.listen()",
+        "detail": "tcp_server",
+        "documentation": {}
+    }
+]
