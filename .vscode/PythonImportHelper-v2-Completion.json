@@ -43,5 +43,23 @@
         "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n# ^ Get IP\nprint(socket.gethostname())\nprint(socket.gethostbyname(socket.gethostname()))\nserver_socket.bind((socket.gethostbyname(socket.gethostname()), 12345))\nserver_socket.listen()\nwhile True:\n    client_socket, client_address = server_socket.accept()\n    print(type(client_socket))\n    print(client_socket)",
         "detail": "tcp_server",
         "documentation": {}
+    },
+    {
+        "label": "client_socket",
+        "kind": 5,
+        "importPath": "udp_client",
+        "description": "udp_client",
+        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\nclient_socket.sendto('hello server'.encode('utf-8'), (socket.gethostbyname(socket.gethostname()), 12345))",
+        "detail": "udp_client",
+        "documentation": {}
+    },
+    {
+        "label": "server_socket",
+        "kind": 5,
+        "importPath": "udp_server",
+        "description": "udp_server",
+        "peekOfCode": "server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\nserver_socket.bind((socket.gethostbyname(socket.gethostname()), 12345))\nmessage, address = server_socket.recvfrom(1024)\nprint(message.decode('utf-8'))\nprint(address)",
+        "detail": "udp_server",
+        "documentation": {}
     }
 ]
