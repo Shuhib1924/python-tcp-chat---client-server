@@ -18,5 +18,8 @@ while True:
     print(type(client_address))
     print(client_address)
 
+    print(f'connect to {client_address}!\n')
+    client_socket.send('you are connected'.encode('utf-8'))
+
     server_socket.close()
     break

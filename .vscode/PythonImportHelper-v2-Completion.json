@@ -13,7 +13,25 @@
         "kind": 5,
         "importPath": "tcp_client",
         "description": "tcp_client",
-        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((socket.gethostbyname(socket.gethostname()), 12345))\n# before decoding",
+        "peekOfCode": "client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient_socket.connect((socket.gethostbyname(socket.gethostname()), 12345))\n# before decoding\nmessage = client_socket.recv(1024)\nprint(message)\nprint(type(message))\n# after decoding\nmessage = message.decode('utf-8')\nprint(message)\nprint(type(message))",
+        "detail": "tcp_client",
+        "documentation": {}
+    },
+    {
+        "label": "message",
+        "kind": 5,
+        "importPath": "tcp_client",
+        "description": "tcp_client",
+        "peekOfCode": "message = client_socket.recv(1024)\nprint(message)\nprint(type(message))\n# after decoding\nmessage = message.decode('utf-8')\nprint(message)\nprint(type(message))",
+        "detail": "tcp_client",
+        "documentation": {}
+    },
+    {
+        "label": "message",
+        "kind": 5,
+        "importPath": "tcp_client",
+        "description": "tcp_client",
+        "peekOfCode": "message = message.decode('utf-8')\nprint(message)\nprint(type(message))",
         "detail": "tcp_client",
         "documentation": {}
     },
